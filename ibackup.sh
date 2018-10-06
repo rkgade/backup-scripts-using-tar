@@ -8,16 +8,16 @@ elif [ -e "$1" ]
  then 
 	if [ -e "$2" ]
 	then
-		var1=$( tar -cvvf backup0.tar -g snap-i $1) 
-       	        var2=$( gzip backup0.tar )  
-	        var3=$( mv backup0.tar.gz snap-i $2)
+		var1=$( tar -cvvf backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar -g snap-i $1) 
+       	        var2=$( gzip backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar )  
+		var3=$( mv backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar.gz snap-i $2)
 
 	else
 
         mkdir $2	
-        var1=$( tar -cvvf backup0.tar -g snap-i $1) 
-       	var2=$( gzip backup0.tar )  
-	var3=$( mv backup0.tar.gz snap-i $2) 
+        var1=$( tar -cvvf backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar -g snap-i $1) 
+        var2=$( gzip backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar )  
+	var3=$( mv backup_"$(date +%Y-%m-%d-%H-%M-%S)".tar.gz snap-i $2) 
         
         fi
        
